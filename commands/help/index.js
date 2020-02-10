@@ -9,8 +9,11 @@ async function help(message) {
 		.addField(`${config.settings.prefix}setprefix [*new prefix*]`, 'Change the bot prefix.')
 		.addField(`${config.settings.prefix}math [*calculation*]`, 'Make a simple calculation for you.')
 		.addField(`${config.settings.prefix}say [*string*]`, 'Make the bot say something')
+		.addField(`${config.settings.prefix}mute [*mention*]`, 'Mute the mentionned user')
+		.addField(`${config.settings.prefix}kick [*mention*]`, 'Kick the mentionned user')
+		.addField(`${config.settings.prefix}ban [*mention*]`, 'Ban the mentionned user')
 		.addField(`${config.settings.prefix}ping`, 'Ping the bot')
-		.setFooter(`Made by Aznoob`);
+		.setFooter(`Made by @You`);
 
 	message.channel.send(Embed);
 }

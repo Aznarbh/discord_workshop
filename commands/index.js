@@ -5,6 +5,9 @@ const say = require('./say');
 const maths = require('./maths');
 const help = require('./help');
 const setprefix = require('./setprefix');
+const mute = require('./mute');
+const ban = require('./ban');
+const kick = require('./kick');
 
 var coms = {};
 coms.ping = function (message) {
@@ -14,7 +17,6 @@ coms.say = function (message) {
 	say.say(message);
 };
 coms.help = function (message) {
-	console.log("HELP !");
 	help.help(message);
 };
 coms.maths = function (message) {
@@ -22,6 +24,15 @@ coms.maths = function (message) {
 };
 coms.setprefix = function (message) {
 	setprefix.setprefix(message);
+};
+coms.mute = function (message) {
+	mute.mute(message);
+};
+coms.ban = function (message) {
+	ban.ban(message);
+};
+coms.kick = function (message) {
+	kick.kick(message);
 };
 
 function printInfos() {
@@ -31,7 +42,6 @@ function printInfos() {
 function executeCommand(message) {
 	const args = message.content.slice(config.settings.prefix.length).trim().split(/ +/g);
 	const cmd = args.shift().toLowerCase();
-//	console.log(coms);
 	try {
 		coms[cmd](message);
 	} catch (e) {
